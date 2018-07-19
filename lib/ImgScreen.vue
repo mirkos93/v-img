@@ -62,7 +62,8 @@
       </div>
 
       <div class="content-v-img">
-        <img :src="images[currentImageIndex]" @click="next">
+        <img v-if="images[currentImageIndex].indexOf('.') > 0" :src="images[currentImageIndex]" @click="next">
+        <iframe v-if="images[currentImageIndex].indexOf('.') < 0" :src="'https://www.youtube.com/embed/' + images[currentImageIndex]" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
 
     </div>
@@ -187,7 +188,8 @@ export default {
   touch-action: none;
 }
 
-.content-v-img img {
+.content-v-img img,
+.content-v-img iframe{
   width: auto;
   height: auto;
   max-width: 100%;
