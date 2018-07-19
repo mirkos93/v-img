@@ -206,6 +206,11 @@ export default {
   user-select: none;
 }
 
+.content-v-img iframe{
+  width:100%;
+  height:85%;
+}
+
 .header-v-img,
 .footer-v-img {
   position: absolute;
